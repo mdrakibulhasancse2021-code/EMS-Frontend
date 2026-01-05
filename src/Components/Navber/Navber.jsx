@@ -1,6 +1,22 @@
+import { Link, NavLink } from "react-router";
 
 
 const Navber = () => {
+
+  const navberItem = <>
+   
+
+      <li>
+      <NavLink to={"/about"}>About</NavLink>
+    </li>
+      <li>
+      <NavLink to={"/contact"}>Contact</NavLink>
+    </li>
+    <li>
+      <NavLink to={"/station"}>Station</NavLink>
+    </li>
+
+  </>
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -26,30 +42,23 @@ const Navber = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-           
-            <li>
-              <a>Item 3</a>
-            </li>
+            {navberItem}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+      <Link to={'/'}>
+          <a className="btn btn-ghost text-xl">JR Management</a></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-       
-          <li>
-            <a>Item 3</a>
-          </li>
+          {navberItem}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+
+        <button className="btn">
+
+          <Link to={"/login"}>Login</Link>
+        </button>
       </div>
     </div>
   );
